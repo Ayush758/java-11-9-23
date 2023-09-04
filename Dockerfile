@@ -4,6 +4,7 @@ COPY . .
 RUN mvn install -DskipTests
 
 FROM openjdk:8-jdk-alpine
+# openjdk:11-ea-17-jre-slim   we can use this image instead bcoz we only need runtime and artiifacts in the final image.
 RUN addgroup chaurasia
 RUN adduser -D chaurasia -G chaurasia
 WORKDIR /app
